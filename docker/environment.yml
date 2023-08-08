@@ -1,0 +1,46 @@
+name: env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python==3.11  # 11 for StrEnum
+  - pip
+  - python-dotenv
+  - lxml==4.9.2
+  - pandas==1.5.3
+  - geopandas==0.12.2 # Needs to be explicit otherwise the dependencies required to use sjoin are not installed
+  - rasterio==1.3.6 # Needs to be explicit as wheel fails to build if insalled as a dependency of geofabrics
+  - python-pdal==3.2.2 # Not on PyPI so needs to be added here and not through pip geofabrics
+  - pytest
+  - psycopg2==2.9.3 # Try remove in future
+  - bs4 # Try remove in future
+  - validators  # Try remove in future
+  - sqlalchemy<2 # To migrate some db connection code needs to change
+  - geoalchemy2
+  - plotly
+  - geocube
+  - pyarrow
+  - aiohttp
+  - flask
+  - flask-cors
+  - redis-py
+  - dask==2022.12.1
+  - pygeos  # for convert 3D geometry to 2D geometry in tile file
+  - shapely
+  - scrapy
+  - leafmap
+  - pdal
+  - gdal
+  - geojson
+  - xarray
+  - rioxarray
+  - tini
+  - pip:
+    - geofabrics==0.10.11
+    - geovoronoi==0.4.0
+    - geoapis==0.3.2
+    - celery==5.2.7
+    - gunicorn==20.1.0
+
+prefix: 
+
